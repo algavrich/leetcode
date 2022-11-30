@@ -4,10 +4,10 @@ of that IP address.
 A defanged IP address replaces every period "." with "[.]".
 
 >>> defang("1.1.1.1")
-"1[.]1[.]1[.]1"
+'1[.]1[.]1[.]1'
 
 >>> defang("255.100.50.0")
-"255[.]100[.]50[.]0"
+'255[.]100[.]50[.]0'
 
 """
 
@@ -26,3 +26,9 @@ def defang(address: str) -> str:
     """
 
     return "[.]".join(address.split("."))
+
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
