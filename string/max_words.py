@@ -31,7 +31,7 @@ def most_words_found(sentences: list[str]) -> int:
 
 def most_words_found(sentences: list[str]) -> int:
     """Second, more clever solution. More efficient runtime. Accepted."""
-    
+
     longest = 0
 
     for sentence in sentences:
@@ -39,6 +39,12 @@ def most_words_found(sentences: list[str]) -> int:
         longest = max(current_length, longest)
         
     return longest
+
+
+def most_words_found(sentences: list[str]) -> int:
+    """Clean one-line solution found in discussion. Accepted."""
+
+    return max(len(sentence.split()) for sentence in sentences)
 
 
 if __name__ == "__main__":
