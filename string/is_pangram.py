@@ -28,5 +28,10 @@ def is_pangram(sentence: str) -> bool:
     """Official solution."""
 
     sentence = set(sentence)
-    
+
     return len(sentence) == 26
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
