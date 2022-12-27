@@ -1,8 +1,8 @@
 """Given a string s, reverse the order of characters in each word within a
 sentence while still preserving whitespace and initial word order.
 
->>> reverse_words("Let's take LeetCode contest")
-'s'teL ekat edoCteeL tsetnoc'
+>>> reverse_words("Lets take LeetCode contest")
+'steL ekat edoCteeL tsetnoc'
 
 >>> reverse_words("God Ding")
 'doG gniD'
@@ -23,7 +23,7 @@ def reverse_words(s: str) -> str:
 
         reversed_words.append("".join(reversed_word))
 
-    return " ".join(reversed_words)
+    return ' '.join(reversed_words)
 
 
 def reverse_words(s: str) -> str:
@@ -45,3 +45,8 @@ def reverse_words(s: str) -> str:
         reversed_words.append("".join(word))
         
     return " ".join(reversed_words)
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
