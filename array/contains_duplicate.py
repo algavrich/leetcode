@@ -30,14 +30,14 @@ def contains_duplicate(nums: List[int]) -> bool:
     return False
 
 
-def containsDuplicate(self, nums: List[int]) -> bool:
+def containsDuplicate(nums: List[int]) -> bool:
     """Inspired by discussion solution. Slightly longer runtime, less memory.
     Accepted.
     
     """
 
     nums_set = set(nums)
-    
+
     return len(nums_set) != len(nums)
 
 
