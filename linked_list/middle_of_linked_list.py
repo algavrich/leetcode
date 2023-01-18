@@ -18,49 +18,58 @@ If there are two middle nodes, return the second middle node.
 
 """
 
-from typing import Optional
+from typing import List
 
 
 class ListNode:
-    def __init__(self, val=0, next=None) -> None:
+    """Class definition for ListNode object."""
+
+    def __init__(self, val: int=0, next=None) -> None:
+        """Constructor for ListNode object."""
+
         self.val = val
         self.next = next
 
 
 class LinkedList:
+    """Class definition for LinkedList object."""
+
     def __init__(self) -> None:
+        """Constructor for LinkedList object."""
         self.head = None
         self.tail = None
 
     def add_node_end(self, node_to_add: ListNode) -> None:
+        """Add node to linked list."""
+
         if self.head == None and self.tail == None:
             self.head = node_to_add
             self.tail = node_to_add
+
         elif self.head == self.tail:
             self.head.next = node_to_add
             self.tail = node_to_add
+
         else:
             self.tail.next = node_to_add
             self.tail = node_to_add
 
-    def print_list(self) -> None:
-        if self.head == None:
-            return
-        curr = self.head
-        while curr:
-            print(curr.val)
-            curr = curr.next
+    def middle_node(self) -> List[int]:
+        """First, intuitive solution. Accepted."""
 
-    def middle_node(self) -> Optional[ListNode]:
         slow = self.head
         fast = self.head
+
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
+
         ans = []
+
         while slow:
             ans.append(slow.val)
             slow = slow.next
+            
         return ans
 
 
